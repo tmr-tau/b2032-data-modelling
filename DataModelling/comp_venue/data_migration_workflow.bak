@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="90" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File />
+          <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+            <ReadCentroids>False</ReadCentroids>
+            <Query>select public.tbl_venues.* 
+from public.tbl_venues</Query>
+            <TableStyle>Quoted</TableStyle>
+            <PostSQL />
+            <CacheData>False</CacheData>
+            <Table />
+            <SessionReadOnly>True</SessionReadOnly>
+            <ReadUncommitted>False</ReadUncommitted>
+            <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+            <NoProgress>True</NoProgress>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <PreSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>dcm:b2032 — b2032
+Query=select public.tbl_venues.*...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="venue_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+            <Field name="venue" size="43" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="V_WString" />
+            <Field name="status_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+            <Field name="region_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+            <Field name="cluster_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+            <Field name="ga" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Double" />
+            <Field name="lat" scale="4" size="21" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="FixedDecimal" />
+            <Field name="long" scale="4" size="21" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="FixedDecimal" />
+            <Field name="geometry" size="2147483647" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="SpatialObj" />
+            <Field name="mv_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int64" />
+            <Field name="zone_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+            <Field name="update_timestamp" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Time" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="venue_id" selected="True" />
+            <SelectField field="venue" selected="True" />
+            <SelectField field="status_id" selected="True" />
+            <SelectField field="sub_venue" selected="True" />
+            <SelectField field="region_id" selected="True" />
+            <SelectField field="zone_id" selected="True" />
+            <SelectField field="cluster_id" selected="True" />
+            <SelectField field="ga" selected="False" />
+            <SelectField field="lat" selected="True" />
+            <SelectField field="long" selected="True" />
+            <SelectField field="geometry" selected="True" />
+            <SelectField field="mv_id" selected="False" />
+            <SelectField field="update_timestamp" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="210" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;&quot;" field="sub_venue" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[sub_venue = ""
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>data_migration_workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="63b66eb3-47d9-4860-84b7-b98aabd0edb9" />
+      <Telemetry>
+        <PreviousWorkflowId value="4d8d262a-a93f-4bf0-81b2-ef4f2bb70f32" />
+        <OriginWorkflowId value="4d8d262a-a93f-4bf0-81b2-ef4f2bb70f32" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,3085 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.1">
+  <Nodes>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="942" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="sport_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="sport_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_sport_id" selected="True" input="Left_" />
+                <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                <SelectField field="Left_venue_id" selected="False" input="Left_" />
+                <SelectField field="Right_venue_id" selected="True" input="Right_" />
+                <SelectField field="Left_is_current" selected="True" input="Left_" />
+                <SelectField field="Right_sport_id" selected="False" rename="Right_sport_id" input="Right_" />
+                <SelectField field="Right_day_id" selected="False" input="Right_" />
+                <SelectField field="Right_session_id" selected="True" input="Right_" />
+                <SelectField field="Right_date_start" selected="False" input="Right_" />
+                <SelectField field="Right_start_time" selected="False" input="Right_" />
+                <SelectField field="Right_date_end" selected="False" input="Right_" />
+                <SelectField field="Right_end_time" selected="False" input="Right_" />
+                <SelectField field="Right_competition_type" selected="True" input="Right_" />
+                <SelectField field="Right_event_type" selected="True" input="Right_" />
+                <SelectField field="Right_gross_seats" selected="False" input="Right_" />
+                <SelectField field="Right_seat_kill" selected="False" input="Right_" />
+                <SelectField field="Right_est_pct_ticksold" selected="False" input="Right_" />
+                <SelectField field="Right_net_seats" selected="False" input="Right_" />
+                <SelectField field="Right_est_sold_seats" selected="False" input="Right_" />
+                <SelectField field="Right_workforce" selected="False" input="Right_" />
+                <SelectField field="Right_unticketed" selected="False" input="Right_" />
+                <SelectField field="Right_subvenue_id" selected="False" input="Right_" />
+                <SelectField field="Right_region_id" selected="False" input="Right_" />
+                <SelectField field="Right_zone_id" selected="False" input="Right_" />
+                <SelectField field="Right_cluster_id" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1062" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="sport_id" action="GroupBy" rename="sport_id" />
+            <SummarizeField field="sport_discipline" action="GroupBy" rename="sport_discipline" />
+            <SummarizeField field="venue_id" action="GroupBy" rename="venue_id" />
+            <SummarizeField field="is_current" action="GroupBy" rename="is_current" />
+            <SummarizeField field="session_id" action="GroupBy" rename="session_id" />
+            <SummarizeField field="competition_type" action="GroupBy" rename="competition_type" />
+            <SummarizeField field="event_type" action="GroupBy" rename="event_type" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1361" y="51" width="611" height="452" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 84</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1386" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select public.tbl_non_comp_facilities.* 
+from public.tbl_non_comp_facilities</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select public.tbl_non_comp_f...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="nc_fac_id" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="Int32" />
+                <Field name="nc_fac" size="100" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="V_WString" />
+                <Field name="details" size="255" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="V_WString" />
+                <Field name="status_id" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="Int16" />
+                <Field name="region_id" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="Int32" />
+                <Field name="lat" scale="4" size="21" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="FixedDecimal" />
+                <Field name="long" scale="4" size="21" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="FixedDecimal" />
+                <Field name="geometry" size="2147483647" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="SpatialObj" />
+                <Field name="update_timestamp" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="DateTime" />
+                <Field name="nc_fac_code" size="4" source="File: select public.tbl_non_comp_facilities.* &#xA;from public.tbl_non_comp_facilities" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1542" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;true&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[is_current = "true"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1674" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="nc_fac_id" selected="True" />
+                <SelectField field="nc_fac" selected="True" rename="nc_fac_name" />
+                <SelectField field="nc_fac_code" selected="True" />
+                <SelectField field="details" selected="True" />
+                <SelectField field="status_id" selected="True" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="lat" selected="True" rename="latitude" />
+                <SelectField field="long" selected="True" rename="longitude" />
+                <SelectField field="geometry" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1386" y="149" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_unticketed.* 
+from tbl_unticketed</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_unticketed.* 
+fr...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="sport_id" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int16" />
+                <Field name="sport_discipline" size="254" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="V_WString" />
+                <Field name="sport_cat" size="254" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="V_WString" />
+                <Field name="region" size="254" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="V_WString" />
+                <Field name="competition" size="254" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="V_WString" />
+                <Field name="day" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int16" />
+                <Field name="datetime_start" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="DateTime" />
+                <Field name="datetime_finish" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="DateTime" />
+                <Field name="low_attendance" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="med_attendance" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="high_attendance" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="residential_walking_catchment" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="2018_gc_commonwealth_games" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="2012_birmingham_commonwealth_games" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="2012_london_olympic_games" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="2022_uci_geelong_wollongong" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="Int64" />
+                <Field name="notes" size="254" source="File: select tbl_unticketed.* &#xA;from tbl_unticketed" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1542" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;true&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[is_current = "true"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1674" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_id" selected="True" />
+                <SelectField field="sport_discipline" selected="True" />
+                <SelectField field="sport_cat" selected="True" />
+                <SelectField field="region" selected="True" rename="region_name" />
+                <SelectField field="competition" selected="True" rename="competition_type" />
+                <SelectField field="day" selected="True" rename="event_day" />
+                <SelectField field="datetime_start" selected="True" />
+                <SelectField field="datetime_finish" selected="True" />
+                <SelectField field="low_attendance" selected="True" />
+                <SelectField field="med_attendance" selected="True" />
+                <SelectField field="high_attendance" selected="True" />
+                <SelectField field="residential_walking_catchment" selected="True" />
+                <SelectField field="2018_gc_commonwealth_games" selected="True" />
+                <SelectField field="2012_birmingham_commonwealth_games" selected="True" />
+                <SelectField field="2012_london_olympic_games" selected="True" />
+                <SelectField field="2022_uci_geelong_wollongong" selected="True" />
+                <SelectField field="notes" selected="True" />
+                <SelectField field="valid_from" selected="True" />
+                <SelectField field="valid_to" selected="True" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="85">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="1793" y="100" width="154" height="378" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 85</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="83">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="1818" y="149" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_unticketed</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Delete</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_unticketed</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="80">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="1818" y="318" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_non_comp_facs</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Delete</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <SpatialObjField>geometry</SpatialObjField>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_non_comp_facs</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="856" y="712" width="1597" height="674" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 67</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="881" y="797" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_events.* 
+from tbl_events</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_events.* 
+from t...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="event_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="venue_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="subvenue_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="region_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="cluster_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="zone_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="sport_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="event_type_id" size="2" source="File: select tbl_events.* &#xA;from tbl_events" type="WString" />
+                <Field name="day_id" source="File: select tbl_events.* &#xA;from tbl_events" type="Int32" />
+                <Field name="session" source="File: select tbl_events.* &#xA;from tbl_events" type="Double" />
+                <Field name="datetime_start" source="File: select tbl_events.* &#xA;from tbl_events" type="DateTime" />
+                <Field name="datetime_finish" source="File: select tbl_events.* &#xA;from tbl_events" type="DateTime" />
+                <Field name="gross_seats" source="File: select tbl_events.* &#xA;from tbl_events" type="Int64" />
+                <Field name="net_seats" source="File: select tbl_events.* &#xA;from tbl_events" type="Int64" />
+                <Field name="seat_kill" source="File: select tbl_events.* &#xA;from tbl_events" type="Double" />
+                <Field name="est_tickets_sold" scale="2" size="5" source="File: select tbl_events.* &#xA;from tbl_events" type="FixedDecimal" />
+                <Field name="sold_seats" source="File: select tbl_events.* &#xA;from tbl_events" type="Int64" />
+                <Field name="workforce" source="File: select tbl_events.* &#xA;from tbl_events" type="Int64" />
+                <Field name="unticketed" source="File: select tbl_events.* &#xA;from tbl_events" type="Int64" />
+                <Field name="comp_id" size="1" source="File: select tbl_events.* &#xA;from tbl_events" type="WString" />
+                <Field name="update_timestamp" source="File: select tbl_events.* &#xA;from tbl_events" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1050" y="798" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_id" selected="True" />
+                <SelectField field="venue_id" selected="True" />
+                <SelectField field="day_id" selected="True" />
+                <SelectField field="subvenue_id" selected="True" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="cluster_id" selected="True" />
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="session" selected="True" />
+                <SelectField field="datetime_start" selected="True" />
+                <SelectField field="datetime_finish" selected="True" />
+                <SelectField field="comp_id" selected="True" rename="competition_type" />
+                <SelectField field="event_id" selected="False" />
+                <SelectField field="event_type_id" selected="True" />
+                <SelectField field="gross_seats" selected="True" />
+                <SelectField field="seat_kill" selected="True" />
+                <SelectField field="est_tickets_sold" selected="True" rename="est_pct_ticksold" />
+                <SelectField field="net_seats" selected="True" />
+                <SelectField field="sold_seats" selected="True" rename="est_sold_seats" />
+                <SelectField field="workforce" selected="True" />
+                <SelectField field="unticketed" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="881" y="978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_event_types.* 
+from tbl_event_types</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_event_types.* 
+f...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="event_type_id" size="13" source="File: select tbl_event_types.* &#xA;from tbl_event_types" type="WString" />
+                <Field name="event_type" size="13" source="File: select tbl_event_types.* &#xA;from tbl_event_types" type="WString" />
+                <Field name="update_timestamp" source="File: select tbl_event_types.* &#xA;from tbl_event_types" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1158" y="809" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="event_type_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="event_type_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_id" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_region_id" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session" selected="True" input="Left_" />
+                    <SelectField field="Left_datetime_start" selected="True" input="Left_" />
+                    <SelectField field="Left_datetime_finish" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type_id" selected="False" input="Left_" />
+                    <SelectField field="Right_event_type_id" selected="True" rename="event_type" input="Right_" />
+                    <SelectField field="Right_event_type" selected="False" input="Right_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_update_timestamp" selected="False" input="Right_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1290" y="809" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[datetime_start]" field="date_start" size="10" type="Date" />
+                <FormulaField expression="[datetime_start]" field="start_time" size="8" type="Time" />
+                <FormulaField expression="[datetime_finish]" field="date_end" size="10" type="Date" />
+                <FormulaField expression="[datetime_finish]" field="end_time" size="8" type="Time" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>date_start = [datetime_start]
+start_time = [datetime_start]
+date_end = [datetime...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1422" y="810" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_id" selected="True" />
+                <SelectField field="venue_id" selected="True" />
+                <SelectField field="day_id" selected="True" />
+                <SelectField field="session" selected="True" rename="session_id" />
+                <SelectField field="date_start" selected="True" />
+                <SelectField field="start_time" selected="True" />
+                <SelectField field="date_end" selected="True" />
+                <SelectField field="end_time" selected="True" />
+                <SelectField field="datetime_start" selected="False" />
+                <SelectField field="datetime_finish" selected="False" />
+                <SelectField field="competition_type" selected="True" />
+                <SelectField field="event_type" selected="True" />
+                <SelectField field="gross_seats" selected="True" />
+                <SelectField field="seat_kill" selected="True" />
+                <SelectField field="est_pct_ticksold" selected="True" />
+                <SelectField field="net_seats" selected="True" />
+                <SelectField field="est_sold_seats" selected="True" />
+                <SelectField field="workforce" selected="True" />
+                <SelectField field="unticketed" selected="True" />
+                <SelectField field="subvenue_id" selected="True" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="cluster_id" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1122" y="1037" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="sport_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="sport_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_sport_discipline" selected="True" input="Right_" />
+                    <SelectField field="Left_sport_id" selected="False" input="Left_" />
+                    <SelectField field="Left_venue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_region_id" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_sport_id" selected="False" rename="Right_sport_id" input="Right_" />
+                    <SelectField field="Right_venue_id" selected="False" rename="Right_venue_id" input="Right_" />
+                    <SelectField field="Right_valid_from" selected="False" input="Right_" />
+                    <SelectField field="Right_valid_to" selected="False" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1230" y="1050" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="venue_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="venue_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_id" selected="True" input="Left_" />
+                    <SelectField field="Right_venue_name" selected="True" input="Right_" />
+                    <SelectField field="Left_subvenue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_region_id" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_venue_id" selected="False" rename="Right_venue_id" input="Right_" />
+                    <SelectField field="Right_status_id" selected="False" input="Right_" />
+                    <SelectField field="Right_region_id" selected="False" input="Right_" />
+                    <SelectField field="Right_zone_id" selected="False" input="Right_" />
+                    <SelectField field="Right_cluster_id" selected="False" input="Right_" />
+                    <SelectField field="Right_lat" selected="False" input="Right_" />
+                    <SelectField field="Right_long" selected="False" input="Right_" />
+                    <SelectField field="Right_capacity" selected="False" input="Right_" />
+                    <SelectField field="Right_geometry" selected="False" input="Right_" />
+                    <SelectField field="Right_valid_from" selected="False" input="Right_" />
+                    <SelectField field="Right_valid_to" selected="False" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" input="Right_" />
+                    <SelectField field="Right_latitude" selected="False" input="Right_" />
+                    <SelectField field="Right_longitude" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="2058" y="1110" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="day_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="day_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_region_name" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_name" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_name" selected="True" input="Left_" />
+                    <SelectField field="Right_event_day" selected="True" input="Right_" />
+                    <SelectField field="Left_day_id" selected="False" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_day_id" selected="False" rename="Right_day_id" input="Right_" />
+                    <SelectField field="Right_model_date" selected="False" input="Right_" />
+                    <SelectField field="Right_actual_date" selected="False" input="Right_" />
+                    <SelectField field="Right_day_of_week" selected="False" input="Right_" />
+                    <SelectField field="Right_competition_type" selected="False" rename="Right_competition_type" input="Right_" />
+                    <SelectField field="Right_valid_from" selected="False" rename="Right_valid_from" input="Right_" />
+                    <SelectField field="Right_valid_to" selected="False" rename="Right_valid_to" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" rename="Right_is_current" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2273" y="761" width="156" height="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 53</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="52">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="2298" y="810" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test_comp_venue.staging_event_session_id</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Delete</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test_comp_venue.staging_even...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="58">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="2298" y="1146" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.staging_event_session</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Delete</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.staging_event_session</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1350" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="subvenue_id" />
+                <Field field="venue_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="subvenue_id" />
+                <Field field="venue_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Right_subvenue_name" selected="True" input="Right_" />
+                    <SelectField field="Left_subvenue_id" selected="False" input="Left_" />
+                    <SelectField field="Left_region_id" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_subvenue_id" selected="False" rename="Right_subvenue_id" input="Right_" />
+                    <SelectField field="Right_venue_id" selected="False" input="Right_" />
+                    <SelectField field="Right_capacity" selected="False" input="Right_" />
+                    <SelectField field="Right_valid_from" selected="False" input="Right_" />
+                    <SelectField field="Right_valid_to" selected="False" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" input="Right_" />
+                    <SelectField field="Left_Right_venue_id" selected="False" input="Left_" />
+                    <SelectField field="Left_venue_id" selected="False" input="Left_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="70">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1770" y="1074" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="region_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="region_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_name" selected="True" input="Left_" />
+                    <SelectField field="Right_region_name" selected="True" input="Right_" />
+                    <SelectField field="Left_region_id" selected="False" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_region_id" selected="False" rename="Right_region_id" input="Right_" />
+                    <SelectField field="Right_area_sqkm" selected="False" input="Right_" />
+                    <SelectField field="Right_length_km" selected="False" input="Right_" />
+                    <SelectField field="Right_geometry" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1866" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="zone_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="zone_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_region_name" selected="True" input="Left_" />
+                    <SelectField field="Right_zone_name" selected="True" input="Right_" />
+                    <SelectField field="Left_zone_id" selected="False" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_zone_id" selected="False" rename="Right_zone_id" input="Right_" />
+                    <SelectField field="Right_region_id" selected="False" input="Right_" />
+                    <SelectField field="Right_geometry" selected="False" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1962" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="cluster_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="cluster_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_sport_discipline" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_subvenue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_region_name" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_name" selected="True" input="Left_" />
+                    <SelectField field="Right_cluster_name" selected="True" input="Right_" />
+                    <SelectField field="Left_cluster_id" selected="False" input="Left_" />
+                    <SelectField field="Left_day_id" selected="True" input="Left_" />
+                    <SelectField field="Left_session_id" selected="True" input="Left_" />
+                    <SelectField field="Left_date_start" selected="True" input="Left_" />
+                    <SelectField field="Left_start_time" selected="True" input="Left_" />
+                    <SelectField field="Left_date_end" selected="True" input="Left_" />
+                    <SelectField field="Left_end_time" selected="True" input="Left_" />
+                    <SelectField field="Left_competition_type" selected="True" input="Left_" />
+                    <SelectField field="Left_event_type" selected="True" input="Left_" />
+                    <SelectField field="Left_gross_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_seat_kill" selected="True" input="Left_" />
+                    <SelectField field="Left_est_pct_ticksold" selected="True" input="Left_" />
+                    <SelectField field="Left_net_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_est_sold_seats" selected="True" input="Left_" />
+                    <SelectField field="Left_workforce" selected="True" input="Left_" />
+                    <SelectField field="Left_unticketed" selected="True" input="Left_" />
+                    <SelectField field="Right_cluster_id" selected="False" rename="Right_cluster_id" input="Right_" />
+                    <SelectField field="Right_region_id" selected="False" input="Right_" />
+                    <SelectField field="Right_zone_id" selected="False" input="Right_" />
+                    <SelectField field="Right_is_current" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1470" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1578" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_discipline" selected="True" />
+                <SelectField field="venue_name" selected="True" />
+                <SelectField field="subvenue_name" selected="True" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="cluster_id" selected="True" />
+                <SelectField field="day_id" selected="True" />
+                <SelectField field="session_id" selected="True" />
+                <SelectField field="date_start" selected="True" />
+                <SelectField field="start_time" selected="True" />
+                <SelectField field="date_end" selected="True" />
+                <SelectField field="end_time" selected="True" />
+                <SelectField field="competition_type" selected="True" />
+                <SelectField field="event_type" selected="True" />
+                <SelectField field="gross_seats" selected="True" />
+                <SelectField field="seat_kill" selected="True" />
+                <SelectField field="est_pct_ticksold" selected="True" />
+                <SelectField field="net_seats" selected="True" />
+                <SelectField field="est_sold_seats" selected="True" />
+                <SelectField field="workforce" selected="True" />
+                <SelectField field="unticketed" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="75">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1674" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if IsNull([subvenue_name]) then &quot;Not Applicable&quot;&#xA;else [subvenue_name]&#xA;endif" field="subvenue_name" size="24" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>subvenue_name = if IsNull([subvenue_name]) then "Not Applicable"
+else [subvenue_...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="87">
+          <GuiSettings>
+            <Position x="2154" y="1302" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Number">False</Value>
+              <Value name="NNumber">1000</Value>
+              <Value name="Percent">True</Value>
+              <Value name="NPercent">1</Value>
+              <Value name="Deterministic">False</Value>
+              <Value name="Seed">458676342</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="RandomRecords.yxmc" />
+        </Node>
+        <Node ToolID="88">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="965" y="1216" width="396" height="133" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 88</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="63">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+                <Position x="990" y="1265" />
+              </GuiSettings>
+              <Properties>
+                <Configuration joinByRecordPos="False">
+                  <JoinInfo connection="Left">
+                    <Field field="venue_name" />
+                  </JoinInfo>
+                  <JoinInfo connection="Right">
+                    <Field field="venue_name" />
+                  </JoinInfo>
+                  <SelectConfiguration>
+                    <Configuration outputConnection="Join">
+                      <OrderChanged value="False" />
+                      <CommaDecimal value="False" />
+                      <SelectFields>
+                        <SelectField field="Right_venue_name" selected="True" rename="Right_venue_name" input="Right_" />
+                        <SelectField field="*Unknown" selected="True" />
+                      </SelectFields>
+                    </Configuration>
+                  </SelectConfiguration>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+            </Node>
+            <Node ToolID="64">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+                <Position x="1134" y="1266" />
+              </GuiSettings>
+              <Properties>
+                <Configuration joinByRecordPos="False">
+                  <JoinInfo connection="Left">
+                    <Field field="sport_discipline" />
+                  </JoinInfo>
+                  <JoinInfo connection="Right">
+                    <Field field="sport_discipline" />
+                  </JoinInfo>
+                  <SelectConfiguration>
+                    <Configuration outputConnection="Join">
+                      <OrderChanged value="False" />
+                      <CommaDecimal value="False" />
+                      <SelectFields>
+                        <SelectField field="Right_sport_discipline" selected="True" rename="Right_sport_discipline" input="Right_" />
+                        <SelectField field="Right_venue_id" selected="True" rename="Right_venue_id" input="Right_" />
+                        <SelectField field="Right_is_current" selected="True" rename="Right_is_current" input="Right_" />
+                        <SelectField field="Right_valid_from" selected="True" rename="Right_valid_from" input="Right_" />
+                        <SelectField field="Right_valid_to" selected="True" rename="Right_valid_to" input="Right_" />
+                        <SelectField field="*Unknown" selected="True" />
+                      </SelectFields>
+                    </Configuration>
+                  </SelectConfiguration>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+            </Node>
+            <Node ToolID="65">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+                <Position x="1278" y="1266" />
+              </GuiSettings>
+              <Properties>
+                <Configuration joinByRecordPos="False">
+                  <JoinInfo connection="Left">
+                    <Field field="event_day" />
+                    <Field field="competition_type" />
+                  </JoinInfo>
+                  <JoinInfo connection="Right">
+                    <Field field="event_day" />
+                    <Field field="competition_type" />
+                  </JoinInfo>
+                  <SelectConfiguration>
+                    <Configuration outputConnection="Join">
+                      <OrderChanged value="False" />
+                      <CommaDecimal value="False" />
+                      <SelectFields>
+                        <SelectField field="Left_Right_is_current" selected="True" rename="Left_Right_is_current" input="Left_" />
+                        <SelectField field="Right_event_day" selected="True" rename="Right_event_day" input="Right_" />
+                        <SelectField field="Right_competition_type" selected="True" rename="Right_competition_type" input="Right_" />
+                        <SelectField field="Right_valid_from" selected="True" rename="Right_valid_from" input="Right_" />
+                        <SelectField field="Right_valid_to" selected="True" rename="Right_valid_to" input="Right_" />
+                        <SelectField field="Right_is_current" selected="True" rename="Right_is_current" input="Right_" />
+                        <SelectField field="Left_Right_valid_from" selected="True" rename="Left_Right_valid_from" input="Left_" />
+                        <SelectField field="Left_Right_valid_to" selected="True" rename="Left_Right_valid_to" input="Left_" />
+                        <SelectField field="*Unknown" selected="True" />
+                      </SelectFields>
+                    </Configuration>
+                  </SelectConfiguration>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2178" y="966" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File />
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                <SpatialObjSize>8000</SpatialObjSize>
+                <TableStyle>Quoted</TableStyle>
+                <TransactionMessages>False</TransactionMessages>
+                <Table>test.staging_event_session</Table>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <OutputOption>Delete</OutputOption>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <Projection />
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.staging_event_session</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="629" y="51" width="731" height="466" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 40</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="654" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_calendar.* 
+from tbl_calendar</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_calendar.* 
+from...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="day_id" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="Int32" />
+                <Field name="day" scale="0" size="7" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="FixedDecimal" />
+                <Field name="model_date" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="Date" />
+                <Field name="date" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="Date" />
+                <Field name="day_of_week" size="9" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="WString" />
+                <Field name="comp_id" size="1" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="WString" />
+                <Field name="update_timestamp" source="File: select tbl_calendar.* &#xA;from tbl_calendar" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="894" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="day_id" selected="True" />
+                <SelectField field="day" selected="True" rename="event_day" />
+                <SelectField field="model_date" selected="True" />
+                <SelectField field="date" selected="True" rename="actual_date" />
+                <SelectField field="day_of_week" selected="True" />
+                <SelectField field="comp_id" selected="True" rename="competition_type" />
+                <SelectField field="valid_from" selected="False" type="DateTime" size="19" />
+                <SelectField field="valid_to" selected="False" type="DateTime" size="19" />
+                <SelectField field="is_current" selected="True" type="Bool" size="1" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="774" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="valid_from" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;9999-12-31 23:59:59&quot;" field="valid_to" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[valid_from = DateTimeNow()
+valid_to = "9999-12-31 23:59:59"
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="654" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_sports.* 
+from tbl_sports</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_sports.* 
+from t...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="sport_id" source="File: select tbl_sports.* &#xA;from tbl_sports" type="Int32" />
+                <Field name="sport_discipline" size="28" source="File: select tbl_sports.* &#xA;from tbl_sports" type="V_WString" />
+                <Field name="update_timestamp" source="File: select tbl_sports.* &#xA;from tbl_sports" type="Time" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="774" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;&quot;" field="venue_id" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;&quot;" field="valid_from" size="19" type="DateTime" />
+                <FormulaField expression="&quot;&quot;" field="valid_to" size="19" type="DateTime" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1" type="Bool" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[venue_id = ""
+valid_from = ""
+valid_to = ""
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="894" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_id" selected="True" />
+                <SelectField field="sport_discipline" selected="True" />
+                <SelectField field="venue_id" selected="True" type="Int32" size="4" />
+                <SelectField field="valid_from" selected="False" />
+                <SelectField field="valid_to" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="1145" y="100" width="190" height="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 59</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="39">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="1170" y="149" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_calendar</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_calendar</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="19">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="1206" y="258" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_sports</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_sports</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="91">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1038" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="sport_id" action="GroupBy" rename="sport_id" />
+                <SummarizeField field="sport_discipline" action="GroupBy" rename="sport_discipline" />
+                <SummarizeField field="venue_id" action="GroupBy" rename="venue_id" />
+                <SummarizeField field="is_current" action="GroupBy" rename="is_current" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="92">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1122" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sport_id" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="93">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="906" y="294" width="100" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>dim_sports need more refinement</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="53" width="541" height="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 21</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="152" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_regions.* 
+from tbl_regions</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_regions.* 
+from...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="region_id" source="File: select tbl_regions.* &#xA;from tbl_regions" type="Int32" />
+                <Field name="region" size="16" source="File: select tbl_regions.* &#xA;from tbl_regions" type="WString" />
+                <Field name="area_sqkm" scale="6" size="22" source="File: select tbl_regions.* &#xA;from tbl_regions" type="FixedDecimal" />
+                <Field name="length_km" scale="6" size="22" source="File: select tbl_regions.* &#xA;from tbl_regions" type="FixedDecimal" />
+                <Field name="geometry" size="2147483647" source="File: select tbl_regions.* &#xA;from tbl_regions" type="SpatialObj" />
+                <Field name="update_timestamp" source="File: select tbl_regions.* &#xA;from tbl_regions" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="320" y="152" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="region" selected="True" rename="region_name" />
+                <SelectField field="area_sqkm" selected="True" />
+                <SelectField field="length_km" selected="True" />
+                <SelectField field="geometry" selected="True" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="320" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_zones.* 
+from tbl_zones</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_zones.* 
+from tb...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="zone_id" source="File: select tbl_zones.* &#xA;from tbl_zones" type="Int32" />
+                <Field name="zone" size="14" source="File: select tbl_zones.* &#xA;from tbl_zones" type="WString" />
+                <Field name="ga" scale="0" size="5" source="File: select tbl_zones.* &#xA;from tbl_zones" type="FixedDecimal" />
+                <Field name="geometry" size="2147483647" source="File: select tbl_zones.* &#xA;from tbl_zones" type="SpatialObj" />
+                <Field name="region_id" source="File: select tbl_zones.* &#xA;from tbl_zones" type="Int32" />
+                <Field name="update_timestamp" source="File: select tbl_zones.* &#xA;from tbl_zones" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="320" y="320" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="zone" selected="True" rename="zone_name" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="ga" selected="False" />
+                <SelectField field="geometry" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="valid_from" selected="False" />
+                <SelectField field="valid_to" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="488" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select tbl_clusters.* 
+from tbl_clusters</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select tbl_clusters.* 
+from...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="cluster_id" source="File: select tbl_clusters.* &#xA;from tbl_clusters" type="Int32" />
+                <Field name="cluster" size="14" source="File: select tbl_clusters.* &#xA;from tbl_clusters" type="V_WString" />
+                <Field name="region_id" source="File: select tbl_clusters.* &#xA;from tbl_clusters" type="Int32" />
+                <Field name="zone_id" source="File: select tbl_clusters.* &#xA;from tbl_clusters" type="Int32" />
+                <Field name="update_timestamp" source="File: select tbl_clusters.* &#xA;from tbl_clusters" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="320" y="488" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="cluster_id" selected="True" />
+                <SelectField field="cluster" selected="True" rename="cluster_name" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="valid_from" selected="False" />
+                <SelectField field="valid_to" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="199" y="488" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;&quot;" field="valid_from" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;&quot;" field="valid_to" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[valid_from = ""
+valid_to = ""
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="200" y="320" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;&quot;" field="valid_from" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;&quot;" field="valid_to" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[valid_from = ""
+valid_to = ""
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="199" y="152" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="412" y="102" width="158" height="544" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 76</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="13">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="440" y="151" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_regions</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <SpatialObjField>geometry</SpatialObjField>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_regions</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="14">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="438" y="330" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_zones</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <SpatialObjField>geometry</SpatialObjField>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_zones</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="10">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="437" y="486" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_clusters</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_clusters</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="53" y="714" width="769" height="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 12</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="967" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select public.tbl_venues.* 
+from public.tbl_venues</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:b2032 — b2032
+Query=select public.tbl_venues.*...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="venue_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+                <Field name="venue" size="43" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="V_WString" />
+                <Field name="status_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+                <Field name="region_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+                <Field name="cluster_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+                <Field name="ga" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Double" />
+                <Field name="lat" scale="4" size="21" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="FixedDecimal" />
+                <Field name="long" scale="4" size="21" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="FixedDecimal" />
+                <Field name="geometry" size="2147483647" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="SpatialObj" />
+                <Field name="mv_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int64" />
+                <Field name="zone_id" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Int32" />
+                <Field name="update_timestamp" source="File: select public.tbl_venues.* &#xA;from public.tbl_venues" type="Time" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="320" y="968" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="venue_id" selected="True" />
+                <SelectField field="venue" selected="True" rename="venue_name" />
+                <SelectField field="status_id" selected="True" />
+                <SelectField field="region_id" selected="True" />
+                <SelectField field="zone_id" selected="True" />
+                <SelectField field="cluster_id" selected="True" />
+                <SelectField field="ga" selected="False" />
+                <SelectField field="lat" selected="True" rename="latitude" />
+                <SelectField field="long" selected="True" rename="longitude" />
+                <SelectField field="geometry" selected="True" />
+                <SelectField field="mv_id" selected="False" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="valid_from" selected="False" />
+                <SelectField field="valid_to" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="200" y="967" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="valid_from" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;9999-12-31 23:59:59&quot;" field="valid_to" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[valid_from = DateTimeNow()
+valid_to = "9999-12-31 23:59:59"
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="1172" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select public.tbl_subvenues.* 
+from public.tbl_subvenues</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select public.tbl_subvenues....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="subvenue_id" source="File: select public.tbl_subvenues.* &#xA;from public.tbl_subvenues" type="Int32" />
+                <Field name="venue_id" source="File: select public.tbl_subvenues.* &#xA;from public.tbl_subvenues" type="Int32" />
+                <Field name="subvenue" size="24" source="File: select public.tbl_subvenues.* &#xA;from public.tbl_subvenues" type="V_WString" />
+                <Field name="capacity" scale="0" size="11" source="File: select public.tbl_subvenues.* &#xA;from public.tbl_subvenues" type="FixedDecimal" />
+                <Field name="update_timestamp" source="File: select public.tbl_subvenues.* &#xA;from public.tbl_subvenues" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="211" y="1172" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>subvenue</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-09-02 13:47:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2024-09-02 13:47:41</StartDate>
+                  <EndDate>2024-09-02 13:47:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([subvenue])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="403" y="1172" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="subvenue_id" selected="True" />
+                <SelectField field="subvenue" selected="True" rename="subvenue_name" />
+                <SelectField field="venue_id" selected="True" />
+                <SelectField field="capacity" selected="True" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="valid_from" selected="True" />
+                <SelectField field="valid_to" selected="True" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="308" y="1172" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="811" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <ReadCentroids>False</ReadCentroids>
+                <Query>select public.tbl_status.* 
+from public.tbl_status</Query>
+                <TableStyle>Quoted</TableStyle>
+                <PostSQL />
+                <CacheData>False</CacheData>
+                <Table />
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                <NoProgress>True</NoProgress>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Query=select public.tbl_status.*...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="status_id" source="File: select public.tbl_status.* &#xA;from public.tbl_status" type="Int32" />
+                <Field name="status" size="17" source="File: select public.tbl_status.* &#xA;from public.tbl_status" type="V_WString" />
+                <Field name="update_timestamp" source="File: select public.tbl_status.* &#xA;from public.tbl_status" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="319" y="812" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="status_id" selected="True" />
+                <SelectField field="status" selected="True" rename="status_name" />
+                <SelectField field="update_timestamp" selected="False" />
+                <SelectField field="valid_from" selected="False" />
+                <SelectField field="valid_to" selected="False" />
+                <SelectField field="is_current" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="199" y="811" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="valid_from" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;9999-12-31 23:59:59&quot;" field="valid_to" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;True&quot;" field="is_current" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[valid_from = DateTimeNow()
+valid_to = "9999-12-31 23:59:59"
+is_current = "True"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="640" y="763" width="157" height="568" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 61</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="35">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="665" y="812" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_status</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_status</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="23">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="665" y="1026" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_venues</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <SpatialObjField>geometry</SpatialObjField>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_venues</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+            <Node ToolID="31">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="665" y="1170" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File />
+                  <Passwords />
+                  <Disable>False</Disable>
+                  <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+                    <SpatialObjSize>8000</SpatialObjSize>
+                    <TableStyle>Quoted</TableStyle>
+                    <TransactionMessages>False</TransactionMessages>
+                    <Table>test.dim_subvenues</Table>
+                    <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                    <OutputOption>Append</OutputOption>
+                    <Connection DcmType="ConnectionId">8ff4151d-4d57-4727-85da-5bdf843091f9</Connection>
+                    <Projection />
+                    <PostSQL />
+                    <TransactionSize>10000</TransactionSize>
+                    <PreSQL />
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>dcm:dev-b2032-db — dev-b2032-db
+Table=test.dim_subvenues</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="440" y="980" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="venue_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="venue_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_venue_id" selected="True" input="Left_" />
+                    <SelectField field="Left_venue_name" selected="True" input="Left_" />
+                    <SelectField field="Left_status_id" selected="True" input="Left_" />
+                    <SelectField field="Left_region_id" selected="True" input="Left_" />
+                    <SelectField field="Left_zone_id" selected="True" input="Left_" />
+                    <SelectField field="Left_cluster_id" selected="True" input="Left_" />
+                    <SelectField field="Left_latitude" selected="True" input="Left_" />
+                    <SelectField field="Left_longitude" selected="True" input="Left_" />
+                    <SelectField field="Left_geometry" selected="True" input="Left_" />
+                    <SelectField field="Left_is_current" selected="True" input="Left_" />
+                    <SelectField field="Right_subvenue_id" selected="True" input="Right_" />
+                    <SelectField field="Right_venue_id" selected="True" rename="Right_venue_id" input="Right_" />
+                    <SelectField field="Right_subvenue" selected="True" input="Right_" />
+                    <SelectField field="Right_capacity" selected="True" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="548" y="980" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="venue_id" action="GroupBy" rename="venue_id" />
+                <SummarizeField field="venue_name" action="GroupBy" rename="venue_name" />
+                <SummarizeField field="status_id" action="GroupBy" rename="status_id" />
+                <SummarizeField field="region_id" action="GroupBy" rename="region_id" />
+                <SummarizeField field="zone_id" action="GroupBy" rename="zone_id" />
+                <SummarizeField field="cluster_id" action="GroupBy" rename="cluster_id" />
+                <SummarizeField field="latitude" action="GroupBy" rename="latitude" />
+                <SummarizeField field="longitude" action="GroupBy" rename="longitude" />
+                <SummarizeField field="capacity" action="Sum" rename="capacity" />
+                <SummarizeField field="geometry" action="SpatialObjCombine" rename="geometry" />
+                <SummarizeField field="is_current" action="GroupBy" rename="is_current" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="89" Connection="Join" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Join" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="45" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Join" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="54" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="54" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="89" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="89" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Join" />
+      <Destination ToolID="55" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="55" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Join" />
+      <Destination ToolID="69" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="69" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Join" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Join" />
+      <Destination ToolID="63" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="63" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Join" />
+      <Destination ToolID="87" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="69" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="69" Connection="Left" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Join" />
+      <Destination ToolID="71" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="71" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Join" />
+      <Destination ToolID="72" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="72" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Join" />
+      <Destination ToolID="56" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="56" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="70" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="70" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Join" />
+      <Destination ToolID="64" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="64" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Join" />
+      <Destination ToolID="65" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="65" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="28" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="28" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="True" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Join" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>data_migration_workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="63b66eb3-47d9-4860-84b7-b98aabd0edb9" />
+      <Telemetry>
+        <PreviousWorkflowId value="4d8d262a-a93f-4bf0-81b2-ef4f2bb70f32" />
+        <OriginWorkflowId value="4d8d262a-a93f-4bf0-81b2-ef4f2bb70f32" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
